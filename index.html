@@ -1,20 +1,44 @@
-<html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pudim</title>
-    <link rel="stylesheet" href="estilo.css">
-</head>
-<body>
-<div>
-    <div class="container">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="pudim.jpg" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+      </div>
+    </header>
+
+<div class="container">
         <div class="image">
-            <img src="pudim.jpg" alt="">
+            <img src="pudim.jpg" alt="image" />
         </div>
         <div class="email">
-            <a href="mailto:pudim@pudim.com.br">pudim@pudim.com.br</a>
+                    <p style="max-width: 600px; margin: 1rem auto; color: #555">
+            O Pudim hoje é conhecido como uma sobremesa doce que é servida logo após as refeições. Porém na Grécia antiga onde se tem os primeiros vestígios do prato, a concepção era um tanto quanto diferente. 
+Datado de 8 A.C, o pudim era salgado e feito com sangue assado no estômago do porco.Tal receita foi adaptada em países como Reino Unido e Irlanda, podendo levar a outros tipos de vísceras de animais.
+Com o passar do tempo, a receita foi adaptada de acordo com cada cultura, levando diferentes tipos de ingredientes, como grãos, trigo, ovos, carne, leite, dentre muitos outros.
+ Diferente da receita salgada, o pudim no Brasil ganhou um espaço no coração dos amantes por doce, sendo uma boa opção para diferentes tipos de eventos sociais, como churrasco, almoço em família, ceia de Natal e muito mais.
+
+Mesmo sendo amado, ainda conta com variação, onde é possível encontrar pudim de leite condensado, pudim de leite de coco, pudim de pão dentre muitos outros, variando de acordo com cada região. Assim, existe opção para todos os gostos.
+
+</p>
+
+    
+          <a href="https://www.tudogostoso.com.br/noticias/pudim-de-leite-condensado-surgiu-na-grecia-conheca-a-historia-da-sobremesa-preferida-dos-brasileiros-a12109.htm">Saiba mais sobre a história do pudim aqui</a>
+          
+        
         </div>
     </div>
-</div>
+
+<footer>
+    <p class="credits">Créditos: Luiz Henrique/ <a href="https://www.tudogostoso.com.br/noticias/pudim-de-leite-condensado-surgiu-na-grecia-conheca-a-historia-da-sobremesa-preferida-dos-brasileiros-a12109.htm">tudo gostoso site</a></p>
+    <button id="shareBtn" class="share-button">Compartilhar esta página</button>
+</footer>
 <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -24,6 +48,34 @@
     ga('create', 'UA-28861757-1', 'auto');
     ga('send', 'pageview');
 
+</script>
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.getElementById('shareBtn');
+    if (!btn) return;
+
+    btn.addEventListener('click', function() {
+      if (navigator.share) {
+        navigator.share({
+          title: document.title,
+          text: 'Confira esta página sobre pudim! 🌟',
+          url: window.location.href
+        }).catch(function(err) {
+          console.error('Erro ao compartilhar:', err);
+        });
+      } else {
+    
+        var dummy = document.createElement('input');
+        document.body.appendChild(dummy);
+        dummy.value = window.location.href;
+        dummy.select();
+        document.execCommand('copy');
+        document.body.removeChild(dummy);
+        alert('Link copiado para a área de transferência!');
+      }
+    });
+  });
 </script>
 </body>
 </html>
